@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
+
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -41,8 +43,8 @@ const questions = [
     },
     {
         type: 'list',
-        message: 'Licenses?',
-        name: 'licenses',
+        message: 'License?',
+        name: 'license',
         choices: ['Apache', 'BSD 3-Clause', 'BSD 2-Clause', 'GPL', 'LGPL', 'MIT', 'Mozilla Public License 2.0', 'Common Development and Distribution LIcense', 'Eclipse Public License version 2.0'],
     },
     {
@@ -63,62 +65,14 @@ function writeToFile(fileName, data) {
 }
 
 inquirer
-    .createPromptModule([
-        {
-            type: 'input',
-            message: "What is your Github Username?",
-            name: 'Username',
-        },
-        {
-            type: 'input',
-            message: 'What is the project title?',
-            name: 'fileName',
-        },
-        {
-            type: 'input,',
-            message: 'What is a description of your project?',
-            name: 'description',
-        },
-        {
-            type: 'input',
-            message: 'Installation instructions?',
-            name: 'installation',
-        },
-        {
-            type: 'input',
-            message: 'Usage information?',
-            name: 'iusage',
-        },
-        {
-            type: 'input',
-            message: 'Contribution guidelines?',
-            name: 'contribution',
-        },
-        {
-            type: 'input',
-            message: 'Test instructions?',
-            name: 'test',
-        },
-        {
-            type: 'list',
-            message: 'Licenses?',
-            name: 'licenses',
-            choices: ['Apache', 'BSD 3-Clause', 'BSD 2-Clause', 'GPL', 'LGPL', 'MIT', 'Mozilla Public License 2.0', 'Common Development and Distribution LIcense', 'Eclipse Public License version 2.0'],
-        },
-        {
-            type: 'input',
-            message: 'What is your email?',
-            name: 'email',
-        },
-
-    ])
+    .prompt(questions)
     .then((data) => {
         const fileName = data.fileName;
         console.log(fileName);
 
-        fs.writeFileSync()
-        err ? console.log(err) : console.log('Success!')
+        fs.writeFileSync(`${fileName}.md`, generateMarkdown(data))
     })
+    // .catch(err => console.log(err)),
 // .then(writeToFile())
 
 // TODO: Create a function to initialize app
