@@ -8,8 +8,18 @@ const generateMarkdown = require('./utils/generateMarkdown');
 const questions = [
     {
         type: 'input',
+        message: 'What is your full name?',
+        name: 'name'
+    },
+    {
+        type: 'input',
         message: "What is your Github Username?",
-        name: 'Username',
+        name: 'userName',
+    },
+    {
+        type: 'input',
+        message: 'What is your linkedin username?',
+        name: 'linkedin',
     },
     {
         type: 'input',
@@ -17,8 +27,13 @@ const questions = [
         name: 'fileName',
     },
     {
+        type: 'input',
+        message: 'What is the project repo name?',
+        name: 'repoName'
+    },
+    {
         type: 'input,',
-        message: 'What is a description of your project?',
+        message: 'What is a short description of your project?',
         name: 'description',
     },
     {
@@ -29,7 +44,7 @@ const questions = [
     {
         type: 'input',
         message: 'Usage information?',
-        name: 'iusage',
+        name: 'usage',
     },
     {
         type: 'input',
@@ -42,15 +57,21 @@ const questions = [
         name: 'test',
     },
     {
-        type: 'list',
-        message: 'License?',
-        name: 'license',
-        choices: ['Apache', 'BSD 3-Clause', 'BSD 2-Clause', 'GPL', 'LGPL', 'MIT', 'Mozilla Public License 2.0', 'Common Development and Distribution LIcense', 'Eclipse Public License version 2.0'],
-    },
-    {
         type: 'input',
         message: 'What is your email?',
         name: 'email'
+    },
+    {
+        type: 'checkbox',
+        message: 'Built With:',
+        name: 'built',
+        choices: ['NEXT.JS', 'REACT', 'VUE.JS', 'ANGULAR', 'SVELTE', 'LARAVEL', 'BOOTSTRAP', 'JQUERY']
+    },
+    {
+        type: 'list',
+        message: 'License?',
+        name: 'license',
+        choices: ['Apache-2.0', 'BSD-3-Clause', 'BSD-2-Clause', 'gpl-license', 'lgpl-license', 'MIT', 'MPL-2.0', 'CDDL-1.0', 'EPL-2.0'],
     },
 
 ];
