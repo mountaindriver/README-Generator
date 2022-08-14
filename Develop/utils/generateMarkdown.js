@@ -1,16 +1,16 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) { }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) { }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) { }
 
-function renderBuiltWith(data){
+function renderBuiltWith(data) {
   const built = data.built;
   console.log(built);
 
@@ -27,7 +27,7 @@ function renderBuiltWith(data){
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `#${data.fileName}
+  return `# ${data.fileName}
   <!-- PROJECT LOGO -->
   <br />
   <div align="center">
@@ -49,21 +49,30 @@ function generateMarkdown(data) {
   </div>
   
   
-  
   <!-- TABLE OF CONTENTS -->
   <details>
     <summary>Table of Contents</summary>
     <ol>
+      <li><a href='#license'>License</a></li>
       <li><a href='#description'>Description</a></li>
-      <li><a href='#installation'></a>Installation</li>
-      <li><a href='#usage'></a>Usage</li>
-      <li><a href='#license'></a>License</li>
-      <li><a href='#contributing'></a>Contributing</li>
-      <li><a href='#tests'></a>Tests</li>
-      <li><a href='#questions'></a>Questions</li>
+      <li><a href='#Installation'>Installation</a></li>
+      <li><a href='#usage'>Usage</a></li>
+      <li><a href='#contributing'>Contributing</a></li>
+      <li><a href='#tests'>Tests</a></li>
+      <li><a href='#questions'>Questions</a></li>
     </ol>
   </details>
-  # Description
+
+  ## License
+  
+  Distributed under the ${data.license} License.<br>
+    [![License](https://img.shields.io/badge/License/${data.license}.svg)](https://opensource.org/licenses/${data.license})
+  
+  
+  <p align="right">(<a href="#readme-top">back to top</a>)</p>
+  
+
+  ## Description
   
   ${data.description}
   
@@ -82,14 +91,6 @@ function generateMarkdown(data) {
   
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
   
-  ## License
-  
-  Distributed under the ${data.license} License. See LICENSE.txt for more information.<br>
-    [![License](https://img.shields.io/badge/License-${data.license}-blue.svg)](https://opensource.org/licenses/${data.license})
-  
-  
-  
-  <p align="right">(<a href="#readme-top">back to top</a>)</p>
   
   ## Contributing
   
@@ -105,10 +106,10 @@ function generateMarkdown(data) {
   
   ## Questions
   
-  ${data.userName}
-  https://github.com/${data.userName}
-  
-  ${data.email}`  
+  If you have any question please feel free to reach me at eithr my at me Linkedin, Github, or Email.
+  <p align="left">Linkedin: <a href="#https://www.linkedin.com/in/${data.linkedin}">${data.linkedin}</a></p>
+  <p align="left">Github: <a href="#https://github.com/${data.userName}">${data.userName}</a></p>
+  <p align="left">Email: <a href="#${data.email}">Email: ${data.email}</a></p>`
 }
 
 module.exports = generateMarkdown;

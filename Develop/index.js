@@ -61,17 +61,17 @@ const questions = [
         message: 'What is your email?',
         name: 'email'
     },
-    {
-        type: 'checkbox',
-        message: 'Built With:',
-        name: 'built',
-        choices: ['NEXT.JS', 'REACT', 'VUE.JS', 'ANGULAR', 'SVELTE', 'LARAVEL', 'BOOTSTRAP', 'JQUERY']
-    },
+    // {
+    //     type: 'checkbox',
+    //     message: 'Built With:',
+    //     name: 'built',
+    //     choices: ['NEXT.JS', 'REACT', 'VUE.JS', 'ANGULAR', 'SVELTE', 'LARAVEL', 'BOOTSTRAP', 'JQUERY']
+    // },
     {
         type: 'list',
         message: 'License?',
         name: 'license',
-        choices: ['Apache-2.0', 'BSD-3-Clause', 'BSD-2-Clause', 'gpl-license', 'lgpl-license', 'MIT', 'MPL-2.0', 'CDDL-1.0', 'EPL-2.0'],
+        choices: ['Apache-2.0-blue', 'BSD-3-Clause', 'BSD-2-Clause', 'gpl-license', 'lgpl-license', 'MIT', 'MPL-2.0', 'CDDL-1.0', 'EPL-2.0'],
     },
 
 ];
