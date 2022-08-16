@@ -61,12 +61,7 @@ const questions = [
         message: 'What is your email?',
         name: 'email'
     },
-    // {
-    //     type: 'checkbox',
-    //     message: 'Built With:',
-    //     name: 'built',
-    //     choices: ['NEXT.JS', 'REACT', 'VUE.JS', 'ANGULAR', 'SVELTE', 'LARAVEL', 'BOOTSTRAP', 'JQUERY']
-    // },
+   
     {
         type: 'list',
         message: 'License?',
@@ -77,14 +72,6 @@ const questions = [
 ];
 
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    // const filename = `${data.fileName}`
-
-    // fs.writeFileSync(filename, JSON.stringify(data, null, '\t'),
-    // err ? console.log(err): console.log('Success!')
-}
-
 inquirer
     .prompt(questions)
     .then((data) => {
@@ -93,11 +80,4 @@ inquirer
 
         fs.writeFileSync(`${fileName}.md`, generateMarkdown(data))
     })
-    // .catch(err => console.log(err)),
-// .then(writeToFile())
 
-// TODO: Create a function to initialize app
-function init() { }
-
-// Function call to initialize app
-init();
